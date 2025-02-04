@@ -1,10 +1,18 @@
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  // background: linear-gradient(to right, #eedd99, #eec290, #eeaa88);
-  // margin: 4px;
-  // border-radius: 15px;
+  gap: 15px;
+  max-width: fit-content;
+  // border-bottom: 2px solid #f2f2f2;
+  padding: 10px 20px; /* Adicionando padding para a cápsula ter um espaço ao redor do conteúdo */
+  background-color: #eec290; /* Cor de fundo opcional para a cápsula */
+  border-radius: 50px; /* Arredondando os cantos para criar o efeito cápsula */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+
+  header:hover {
+    background-color: #f1cba1; /* Cor de fundo ao passar o cursor */
+    transform: scale(1.02); /* Pequeno aumento de escala */
   }
 
   .header__logo {
@@ -35,7 +43,7 @@ header {
   }
 
   .nav__link:hover {
-    color: #ccc68d;
+    color: #eab275;
     transform: scale(1.1);
   }
 
@@ -54,5 +62,5 @@ header {
   .social__icon:hover {
     transform: scale(1.2);
     opacity: 0.8;
-    color: #ccc68d;
+    color: #eab275;
   }
