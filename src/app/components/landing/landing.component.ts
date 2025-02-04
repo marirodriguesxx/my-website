@@ -4,7 +4,7 @@ import { DiamondsBackgroundComponent } from '../../shared/diamonds-background/di
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [DiamondsBackgroundComponent],
+  // imports: [DiamondsBackgroundComponent],
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
