@@ -4,5 +4,6 @@ import { LandingComponent } from './components/landing/landing.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/landing', pathMatch: 'full' },  // Add default redirection
-    { path: 'landing', component: LandingComponent }
+    { path: 'landing', component: LandingComponent },
+    { path: 'sobre', component: LandingComponent },
 ];

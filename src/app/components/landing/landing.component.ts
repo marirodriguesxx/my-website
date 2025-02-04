@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { DiamondsBackgroundComponent } from '../../shared/diamonds-background/diamonds-background.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
+  imports: [DiamondsBackgroundComponent],
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })

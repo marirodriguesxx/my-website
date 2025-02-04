@@ -1,62 +1,133 @@
 .landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(to right, #ff66b2, #9b59b6);
-  padding: 20px;
-  border-radius: 15px;
-}
-
-.landing__content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-}
-
-.landing__portrait {
-  flex: 1;
-  padding: 10px;
-}
-
-.landing__portrait-img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.landing__text {
-  flex: 2;
-  padding: 20px;
-  color: white;
-}
-
-.landing__title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.landing__dynamic-text {
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: white;
-  opacity: 0;
-  animation: typeAnimation 4s steps(40) 1s forwards;
-}
-
-@keyframes typeAnimation {
-  from {
-    width: 0;
-    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff66b2, #9b59b6);
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden; /* Ensure the diamonds don't overflow */
   }
-  to {
+  
+  /* Diamonds Background */
+  .diamonds-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    opacity: 1;
+    height: 100%;
+    pointer-events: none; /* Diamonds won't interfere with the page content */
   }
-}
+  
+  .diamond {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff66b2;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: diamondAnimation 5s infinite;
+    opacity: 0.7;
+    z-index: 0;
+  }
+  
+  @keyframes diamondAnimation {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translate(150%, 150%) rotate(180deg);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+      opacity: 0.7;
+    }
+  }
+  
+  /* Add specific positions and animation delays for different diamonds */
+  .diamond:nth-child(1) {
+    top: 10%;
+    left: 15%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+  }
+  
+  .diamond:nth-child(2) {
+    top: 30%;
+    left: 60%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+  }
+  
+  .diamond:nth-child(3) {
+    top: 50%;
+    left: 30%;
+    animation-duration: 5s;
+    animation-delay: 2s;
+  }
+  
+  .diamond:nth-child(4) {
+    top: 70%;
+    left: 80%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+  }
+  
+  /* Content Section */
+  .landing__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 1; /* Ensures content is above the diamonds */
+  }
+  
+  .landing__portrait {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .landing__portrait-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .landing__text {
+    flex: 2;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+  }
+  
+  .landing__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .landing__dynamic-text {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: white;
+    opacity: 0;
+    animation: typeAnimation 4s steps(40) 1s forwards;
+  }
+  
+  @keyframes typeAnimation {
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  

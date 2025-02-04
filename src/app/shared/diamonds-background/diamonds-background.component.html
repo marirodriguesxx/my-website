@@ -1,0 +1,5 @@
+<div class="diamonds-background">
+    <div *ngFor="let square of squares; let i = index" [ngClass]="'square square-' + (i + 1)" [ngStyle]="{'background-color': square.color}">
+    </div>
+  </div>
+  
